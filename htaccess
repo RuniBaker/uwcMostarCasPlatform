@@ -1,0 +1,40 @@
+RewriteEngine On
+
+# Force no caching
+<IfModule mod_headers.c>
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+</IfModule>
+
+# Exclude login files completely
+RewriteRule ^login\.php$ - [L]
+RewriteRule ^login_process\.php$ - [L]
+RewriteRule ^logout\.php$ - [L]
+
+# Block sensitive directories
+RewriteRule ^includes/ - [F,L]
+RewriteRule ^libs/ - [F,L]
+
+# Don't rewrite existing files (CSS, JS, images)
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule . - [L]
+
+# Force redirect from .php to clean URL (this is the key part)
+RewriteCond %{THE_REQUEST} \s/+(.+)\.php[\s?] [NC]
+RewriteCond %1 !^(login|login_process|logout|change_password|forgot_password|request_absence)$
+RewriteRule ^ /%1? [R=301,L]
+
+# Internal rewrite from clean URL to .php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+?)/?$ $1.php [L]
+
+# Same for HTML files
+RewriteCond %{THE_REQUEST} \s/+(.+)\.html[\s?] [NC]
+RewriteRule ^ /%1? [R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]

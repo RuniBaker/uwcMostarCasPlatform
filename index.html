@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UWC Mostar CAS Tracking System</title>
+    <link rel="icon" type="image/x-icon" href="tab.ico">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('1.jpg');
+            height: 100vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+        
+        .hero-text {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            width: 90%;
+            max-width: 1200px;
+            padding: 0 1rem;
+        }
+
+        /* Enhanced mobile responsiveness */
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+            .hero-text p {
+                font-size: 1.125rem;
+            }
+            
+            .hero-image {
+                height: 100vh;
+                min-height: 600px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-text h1 {
+                font-size: 1.75rem;
+                line-height: 1.1;
+            }
+            .hero-text p {
+                font-size: 1rem;
+            }
+            
+            .hero-image {
+                min-height: 500px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 1.5rem;
+                line-height: 1.1;
+            }
+            .hero-text p {
+                font-size: 0.9rem;
+            }
+            
+            .hero-image {
+                min-height: 450px;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation styling */
+        nav {
+            background: transparent;
+        }
+        
+        nav.scrolled {
+            background: rgba(55, 65, 81, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-30 top-0 text-white">
+        <div class="container mx-auto flex items-center justify-between py-4 px-4 sm:px-6 lg:px-8">
+            <div>
+                <span class="text-white font-bold text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
+                    UWC Mostar CAS Platform
+                </span>
+            </div>
+            
+            <!-- Mobile login button -->
+            <div class="lg:hidden">
+                <button id="mobileLoginBtn" class="bg-white text-gray-800 font-bold rounded-full py-2 px-6 shadow-lg text-sm hover:bg-gray-100 transition-colors">
+                    Login
+                </button>
+            </div>
+            
+            <!-- Desktop menu -->
+            <div class="hidden lg:flex lg:items-center space-x-6">
+                <a class="text-white font-bold hover:text-gray-200 transition-colors" href="#about">About Us</a>
+                <button id="desktopLoginBtn" class="bg-white text-gray-800 font-bold rounded-full py-2 px-8 shadow-lg hover:bg-gray-100 transition-colors">
+                    Login
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-image">
+        <div class="hero-text">
+            <div class="mb-4 sm:mb-6 md:mb-8">
+                <h1 class="text-white font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center mb-4">UWC MOSTAR CAS PLATFORM</h1>
+            </div>
+            <p class="leading-normal text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 px-4">Track your CAS activities, attendance, and progress</p>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="bg-white py-8 sm:py-12 md:py-16 lg:py-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6 sm:mb-8 md:mb-12">About UWC Mostar CAS</h2>
+            <div class="flex flex-wrap -mx-4">
+                <div class="w-full md:w-1/2 px-4 mb-8 md:mb-0">
+                    <div class="h-full">
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6">What is CAS?</h3>
+                        <p class="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base leading-relaxed">
+                            Creativity, Activity, and Service (CAS) is one of the three essential elements of the International Baccalaureate (IB) Diploma Programme. Through CAS, students develop skills, attitudes and dispositions through a variety of individual and group experiences that provide students with opportunities to explore their interests and express their passions, personalities and perspectives.
+                        </p>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                            CAS complements a challenging academic programme with a range of experiences that extends students' learning beyond the classroom and helps them develop as unique individuals.
+                        </p>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 px-4">
+                    <div class="h-full">
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6">UWC Mostar's Approach</h3>
+                        <p class="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base leading-relaxed">
+                            At UWC Mostar, CAS is integrated into our mission of making education a force to unite people, nations and cultures for peace and a sustainable future. Our students engage in meaningful activities that combine creativity, physical activity and service to the community.
+                        </p>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                            The CAS Tracking System helps students and CAS leaders monitor participation, track progress, and ensure all IB requirements are met while fostering personal growth and community engagement.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CAS Features Section -->
+    <section class="bg-gray-50 py-8 sm:py-12 md:py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12">CAS Components</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Creativity -->
+                <div class="bg-white rounded-lg shadow-md p-6 sm:p-8 text-center hover:shadow-lg transition-shadow duration-300">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                        <i class="fas fa-palette text-2xl sm:text-3xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-purple-600">Creativity</h3>
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                        Exploring and extending ideas leading to an original or interpretive product or performance.
+                    </p>
+                </div>
+                
+                <!-- Activity -->
+                <div class="bg-white rounded-lg shadow-md p-6 sm:p-8 text-center hover:shadow-lg transition-shadow duration-300">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                        <i class="fas fa-running text-2xl sm:text-3xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-blue-600">Activity</h3>
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                        Physical exertion contributing to a healthy lifestyle, complementing academic work.
+                    </p>
+                </div>
+                
+                <!-- Service -->
+                <div class="bg-white rounded-lg shadow-md p-6 sm:p-8 text-center hover:shadow-lg transition-shadow duration-300">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                        <i class="fas fa-hands-helping text-2xl sm:text-3xl text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-yellow-600">Service</h3>
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                        Collaborative, reciprocal engagement with the community in response to an authentic need.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CAS Absence Form Section -->
+    <section class="bg-white text-center py-8 sm:py-12 md:py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">Need to Report an Absence?</h2>
+            <p class="text-gray-600 mb-6 sm:mb-8 text-sm sm:text-base max-w-2xl mx-auto">
+                If you need to miss a CAS activity, please fill out the absence form in advance to notify your CAS leader.
+            </p>
+            <a href="request_absence.php" class="inline-block text-white font-bold rounded-full text-base sm:text-lg py-3 sm:py-4 px-6 sm:px-8 shadow-xl hover:underline transform transition hover:scale-105 duration-300 ease-in-out bg-gray-800 border border-white hover:bg-gray-700">
+                <i class="fas fa-file-alt mr-2"></i>
+                Fill Out a CAS Absence Form
+            </a>
+        </div>
+    </section>
+
+    <!-- CAS Transcript Request Section -->
+    <section class="bg-gray-50 text-center py-8 sm:py-12 md:py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">Want Your Attendance Record?</h2>
+            <p class="text-gray-600 mb-6 sm:mb-8 text-sm sm:text-base max-w-2xl mx-auto">
+                Get a full breakdown of your CAS attendance - present, absent, and excused - sent directly to your email.
+            </p>
+            <a href="transcript_request.php" class="inline-block text-white font-bold rounded-full text-base sm:text-lg py-3 sm:py-4 px-6 sm:px-8 shadow-xl hover:underline transform transition hover:scale-105 duration-300 ease-in-out bg-purple-600 border border-white hover:bg-purple-700">
+                <i class="fas fa-envelope mr-2"></i>
+                Request My CAS Transcript
+            </a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 sm:py-8 md:py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+                <div class="text-center md:text-left">
+                    <h2 class="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4">UWC Mostar CAS</h2>
+                    <p class="text-gray-400 text-sm sm:text-base">Tracking system for Creativity, Activity, and Service</p>
+                </div>
+                <div class="text-center md:text-left">
+                    <h3 class="text-base sm:text-lg md:text-xl font-bold mb-3 sm:mb-4">Quick Links</h3>
+                    <div class="flex flex-col space-y-2">
+                        <a href="index.html" class="text-gray-400 hover:text-white transition duration-300 text-sm sm:text-base">Home</a>
+                        <a href="index.html#about" class="text-gray-400 hover:text-white transition duration-300 text-sm sm:text-base">About</a>
+                        <a href="#contact" class="text-gray-400 hover:text-white transition duration-300 text-sm sm:text-base">Contact</a>
+                        <a href="request_absence.php" class="text-gray-400 hover:text-white transition duration-300 text-sm sm:text-base">Absence Form</a>
+                        <a href="transcript_request.php" class="text-gray-400 hover:text-white transition duration-300 text-sm sm:text-base">Request Transcript</a>
+                    </div>
+                </div>
+                <div id="contact" class="text-center md:text-left">
+                    <h3 class="text-base sm:text-lg md:text-xl font-bold mb-3 sm:mb-4">Contact</h3>
+                    <div class="space-y-2">
+                        <p class="text-gray-400 text-sm sm:text-base flex items-center justify-center md:justify-start">
+                            <i class="fas fa-envelope mr-2"></i>
+                            cas@uwcmostar.ba
+                        </p>
+                        <p class="text-gray-400 text-sm sm:text-base flex items-center justify-center md:justify-start">
+                            <i class="fas fa-phone mr-2"></i>
+                            +387 36 320 601
+                        </p>
+                        <p class="text-gray-400 text-sm sm:text-base flex items-center justify-center md:justify-start">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            Mostar, Bosnia and Herzegovina
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-6 sm:mt-8 pt-4 sm:pt-6 text-center">
+                <p class="text-xs sm:text-sm text-gray-400">
+                    &copy; 2025 UWC Mostar CAS Tracking System. All rights reserved. (Roni Runi Baker 2025)
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Login button actions
+        document.getElementById('mobileLoginBtn').addEventListener('click', function() {
+            window.location.href = 'login.php';
+        });
+        
+        document.getElementById('desktopLoginBtn').addEventListener('click', function() {
+            window.location.href = 'login.php';
+        });
+        
+        // Change navbar color on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('scrolled');
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('scrolled');
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
